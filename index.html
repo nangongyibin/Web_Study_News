@@ -1,11 +1,106 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-
+    <meta charset="UTF-8" />
+    <base target="_blank">
 </head>
 
 <body>
-
+    <h1 id="head">标题标签,数越大,字越小</h1>
+    <p>段落标签</p>
+    <!-- 下方为水平线标签 -->
+    <hr width="400" />
+    <!-- 下方为换行标签 -->
+    <br />
+    <!-- div标签 竖排列 -->
+    <div>div1</div>
+    <div>div2</div>
+    <!-- span标签 行排列-->
+    <span>span1</span>
+    <span>span2</span>
+    <!-- 粗体 -->
+    <b>粗体b</b>
+    <strong>粗体strong</strong>
+    <!-- 斜体 -->
+    <i>斜体i</i>
+    <em>斜体em</em>
+    <!-- 加删除线 -->
+    <s>删除线s</s>
+    <del>删除线del</del>
+    <!-- 下划线 -->
+    <u>下划线u</u>
+    <ins>下划线ins</ins>
+    <!-- 图像标签 src图像的路径 border设置图像边框的宽度-->
+    <br />
+    <img src="img/x.jpg" alt="图像不能显示时的替换文本" title="鼠标悬停时显示的内容" width="300" height="1200" border="2" />
+    <br />
+    <!-- 链接标签 -->
+    <!--  target="_self" -->
+    <a href="http://www.nangongyibin.com" target="_self">南宫燚滨</a>
+    <!-- 在新的窗口中打开 -->
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <!-- 锚点定位 -->
+    <a href="#head">返回当前h1标题标签</a>
+    <!-- 无序列表 -->
+    <ul>
+        <li>无序列表1</li>
+        <li>无序列表2</li>
+        <li>无序列表3</li>
+    </ul>
+    <!-- 有序列表 -->
+    <ol>
+        <li>有序列表1</li>
+        <li>有序列表2</li>
+        <li>有序列表3</li>
+    </ol>
+    <!-- 自定义列表 -->
+    <dl>
+        <dt>自定义列表dt</dt>
+        <dd>自定义列表dd</dd>
+        <dd>自定义列表dd</dd>
+        <dt>自定义列表dt</dt>
+        <dd>自定义列表dd</dd>
+        <dd>自定义列表dd</dd>
+    </dl>
+    <!-- 表格 -->
+    <table border="1" width="60" height="60" cellspacing="0" cellpadding="0" align="center">
+        <caption>表标题</caption>
+        <thead>
+            <td>表头1</td>
+            <td>表头2</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>table-tr-td</td>
+                <td rowspan="2">table-tr-td</td>
+            </tr>
+            <tr>
+                <td>table-tr-td</td>
+            </tr>
+            <tr>
+                <td colspan="2">table-tr-td</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 表单 -->
+    <form action="test" method="GET" name="form1">
+        <input type="text" name="test0" value="test1" size="10" maxlength="5" id="test2" />
+        <input type="checkbox" checked="checked" />
+    </form>
+    <!-- label标签 -->
+    <label for="male">Male</label>
+    <input type="radio" name="sex" id="male" value="male" />
+    <label for="female">female</label>
+    <input type="radio" name="sex" id="female" value="female" />
+    <!-- textarea文本域 -->
+    <textarea cols="3" rows="3"></textarea>
+    <!-- 下拉菜单 -->
+    <select>
+        <option>菜单1</option>
+        <option>菜单2</option>
+        <option>菜单3</option>
+    </select>
 </body>
 
 </html>
