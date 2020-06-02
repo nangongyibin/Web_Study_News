@@ -1,7 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <!-- head中 -->
+        <script>
+            function headJs() {
+                document.getElementById('ngybP').innerHTML = '我的第一个JavaScripts';
+            }
+        </script>
+        <script src="../js/js.js"></script>
     </head>
-    <body></body>
+    <body>
+        <!-- 改变HTML内容 -->
+        <button type="button" onclick="document.getElementById('ngybP').innerHTML = Date()">点击这里来显示日期和时间</button>
+        <button type="button" onclick="document.getElementById('ngybP').innerHTML = '单引号'">单引号</button>
+        <button type="button" onclick='document.getElementById("ngybP").innerHTML = "双引号"'>双引号</button>
+        <!-- 改变HTML属性 -->
+        <button type="button" onclick="document.getElementById('ngybImg').src = '../img/tiger.jpg'">改变Img的图片</button>
+        <!-- 改变css样式 -->
+        <button type="button" onclick="document.getElementById('ngybP').style.fontSize = '25px'">改变p标签的字体大小</button>
+        <!-- 隐藏和显示元素 -->
+        <button type="button" onclick="document.getElementById('ngybP').style.display = 'none'">隐藏</button>
+        <button type="button" onclick="document.getElementById('ngybP').style.display = 'block'">显示</button>
+        <!-- js存放到head中 -->
+        <button type="button" onclick="headJs()">将js存放到head中</button>
+        <!-- js存放到外部的js文件中 -->
+        <button type="button" onclick="outsideJs()">将js存放到外部的js文件中</button>
+        <!-- 输出 -->
+        <button type="button" onclick="outPutLog()">输出</button>
+        <p id="ngybP"></p>
+        <br/>
+        <img src="../img/wolf.jpg" id="ngybImg"/>
+        <!-- body中 -->
+        <!-- <script>
+            document.getElementById('ngybP').innerHTML = '我的第一个JavaScript';
+        </script> -->
+    </body>
 </html>
