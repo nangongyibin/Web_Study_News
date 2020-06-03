@@ -161,3 +161,48 @@ function getValue(){
     document.getElementById('ngybP').innerHTML = text;
 }
 
+function getDate() {
+    // var date = new Date("October 13, 2014 11:13:00");
+    // var date = new Date('2015-03');
+    // var date = new Date('2018');
+    // var date = new Date('2018-09-12T12:00:00');
+    // var date = new Date('02/19/2018');
+    // var date = new Date('Feb 19 2019');
+    //月和日的顺序徐没有具体规定  月全称或拼写均可  忽略大小写
+    // var date = new Date('19 Feb 2019');
+    // var date = new Date('February,19,2019');
+    // var date  = new Date('Fri Mar 26 2018 09:56:24 GMT+0100 (Tokyo Time)');
+    var date = new Date();
+    var text = date.getDate()+"@"+date.getDay()+"@"+date.getFullYear()+"@"+date.getHours()+"@"+date.getMilliseconds()+"@"+date.getMinutes()+"@"+date.getMonth()+"@"+date.getSeconds()+"@"+date.getTime();
+    //转化成utc字符串
+    // var text = date.toUTCString();
+    //一种日期显示标准
+    // var text =date.toDateString();
+    document.getElementById('ngybP').innerHTML = date;
+    document.getElementById('ngybPNew').innerHTML = text;
+}
+
+
+function mathMethod() {
+    var text; 
+    //π
+    // text = Math.PI;;
+    //四舍五入
+    // text = Math.round(2.3);
+    //几次方
+    // text =Math.pow(8,2);
+    //开根号
+    // text = Math.sqrt(64);
+    //绝对值
+    // text = Math.abs(-4);
+    //向上进位
+    // text = Math.ceil(-6.4);
+    //向下舍弃
+    // text = Math.floor(6.7);
+    //sin方法
+    // text = Math.sin(60);
+    //cos方法
+    text = Math.cos(30);
+    document.getElementById('ngybP').innerHTML = text;
+}
+
