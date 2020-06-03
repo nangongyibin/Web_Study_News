@@ -202,7 +202,37 @@ function mathMethod() {
     //sin方法
     // text = Math.sin(60);
     //cos方法
-    text = Math.cos(30);
+    // text = Math.cos(30);
+    document.getElementById('ngybP').innerHTML = text;
+}
+
+function forMethod() {
+    var person ={
+        fname: 'Bill',
+        lname: 'Gates',
+        age: 62
+    };
+    var text = "";
+    var x; 
+    //x为属性名
+    for(x in person){
+        // text+=person[x];
+        text +=x;
+    }
+    document.getElementById('ngybP').innerHTML = text;
+}
+
+function breakMethod() {
+    var cars  = ['BMW','Volvo','porsche','Ford'];
+    var text = '';
+    list: {
+        text +=cars[0]+"<br>";
+        text +=cars[1]+"<br>";
+        //跳出代码块
+        break list; 
+        text +=cars[2]+"<br>";
+        text +=cars[3]+"<br>";
+    }
     document.getElementById('ngybP').innerHTML = text;
 }
 
