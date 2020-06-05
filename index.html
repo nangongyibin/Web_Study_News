@@ -4,11 +4,42 @@
 <head>
     <meta charset="UTF-8" />
     <base target="_blank">
+    <!-- 内部样式表 -->
+    <style>
+        i {
+            color: pink;
+        }
+
+        div {
+            color: red;
+        }
+
+        /* 类选择器 */
+        .ngyb {
+            color: #ccc;
+        }
+
+        .size {
+            font-size: 25px;
+        }
+
+        #spann {
+            color: purple;
+        }
+
+        * {
+            font-weight: 1px;
+        }
+    </style>
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" href="css/style.css" />
+
 </head>
 
 <body>
     <h1 id="head">标题标签,数越大,字越小</h1>
-    <p>段落标签</p>
+    <!-- 行内样式表 -->
+    <p style="color: blue">段落标签</p>
     <!-- 下方为水平线标签 -->
     <hr width="400" />
     <!-- 下方为换行标签 -->
@@ -17,10 +48,12 @@
     <div>div1</div>
     <div>div2</div>
     <!-- span标签 行排列-->
-    <span>span1</span>
+    <!-- id选择器 -->
+    <span id="spann">span1</span>
     <span>span2</span>
     <!-- 粗体 -->
-    <b>粗体b</b>
+    <!-- 多类名选择器 -->
+    <b class="ngyb size">粗体b</b>
     <strong>粗体strong</strong>
     <!-- 斜体 -->
     <i>斜体i</i>
@@ -67,8 +100,8 @@
     <table border="1" width="60" height="60" cellspacing="0" cellpadding="0" align="center">
         <caption>表标题</caption>
         <thead>
-            <td>表头1</td>
-            <td>表头2</td>
+            <th>表头1</th>
+            <th>表头2</th>
         </thead>
         <tbody>
             <tr>
