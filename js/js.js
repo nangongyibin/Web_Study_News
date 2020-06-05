@@ -302,37 +302,101 @@ function formFunction() {
 }
 
 function JSObject() {
-    var object = {
-        fname: "zhang",
-        lname: "san",
-        age: 45,
-        get fn() {
-            return this.fname;
+    var text;
+    // var object = {
+    //     fname: "zhang",
+    //     lname: "san",
+    //     age: 45
+    //     // get fn() {
+    //     //     return this.fname;
+    //     // },
+    //     // set fn(name) {
+    //     //     this.fname = name;
+    //     // }
+    // };
+    //枚举时使用
+    var object = Object.create(parent, {
+        fname: {
+            value: 'zhang',
+            writable: true,
+            enumerable: false
         },
-        set fn(name) {
-            this.fname = name;
+        lname: {
+            value: 'san',
+            enumerable: true
+        },
+        age: {
+            value: 45,
+            enumerable: true
         }
-    };
+    });
+    //以数组返回所有的属性
+    // text = Object.getOwnPropertyNames(object);
+    //以数组返回所有可枚举的属性 显示enumerable为true的属性名
+    // text = Object.keys(object);
+    // 阻止向对象添加属性 
+    // Object.preventExtensions(object);
+    // 如果可将属性添加到对象,则返回true 
+    // text = Object.isExtensible(object);
+    //阻止更改对象属性 而不是值 
+    // Object.seal(object);
+    //如果对象被密封,则返回true   
+    // text = Object.isSealed(object);
+    //防止对象进行任何修改 
+    // Object.freeze(object);
+    //如果对象被冻结,则返回true
+    // text = Object.isFrozen(object);
+
     // //删除对象的属性
     // // delete object.age;
     // // object["age"] = 56;
     // object.name = function () {
     //     return this.fname + "==" + this.lname;
     // }
-
+    // 添加或更改对象属性
+    Object.defineProperty(object, "setFn", {
+        set: function (value) {
+            this.fname = value;
+        }
+    });
+    Object.defineProperty(object, "getFn", {
+        get: function () {
+            return this.fname;
+        }
+    });
+    object.setFn = 'Uzi';
+    text = object.getFn;
+    //添加或更改多个对象属性
+    // Object.defineProperties(object, {
+    //     age: {
+    //         value: '天道'
+    //     },
+    //     lname: {
+    //         value: '酬勤'
+    //     },
+    //     fname: {
+    //         value: '追梦无疆'
+    //     }
+    // });
+    // text = object.lname + "==" + object.fname + "==" + object.age;
+    //访问属性  未看到值 
+    // text = Object.getOwnPropertyDescriptor(object, "fname");
+    //访问原型   未看到原型
+    // text = Object.getPrototypeOf(object);
+    document.getElementById('ngybP').innerHTML = text;
     // function object(fname, lname, age) {
     //     this.fname = fname;
     //     this.lname = lname;
     //     this.age = age;
-    //     this.changeName = function (name) {
-    //         this.lname = name;
-    //     }
-    //     this.fullname = function () {
-    //         return this.fname + "==" + this.lname;
-    //     }
+    //     // this.changeName = function (name) {
+    //     //     this.lname = name;
+    //     // }
+    //     // this.fullname = function () {
+    //     //     return this.fname + "==" + this.lname;
+    //     // }
     // }
+    // object.prototype.name = "name";
     // var person = new object('南宫', '问天', 29);
     // person.changeName("燚滨");
-    // document.getElementById('ngybP').innerHTML = object.age;
     //document.getElementById('ngybP').innerHTML = person.fullname();
 }
