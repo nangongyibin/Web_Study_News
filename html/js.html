@@ -1,61 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- head中 -->
-        <script>
-            function headJs() {
-                document.getElementById('ngybP').innerHTML = '我的第一个JavaScripts';
-            }
-        </script>
-        <script src="../js/js.js"></script>
-    </head>
-    <body>
-        <!-- 改变HTML内容 -->
-        <button type="button" onclick="document.getElementById('ngybP').innerHTML = Date()">点击这里来显示日期和时间</button>
-        <button type="button" onclick="document.getElementById('ngybP').innerHTML = '单引号'">单引号</button>
-        <button type="button" onclick='document.getElementById("ngybP").innerHTML = "双引号"'>双引号</button>
-        <!-- 改变HTML属性 -->
-        <button type="button" onclick="document.getElementById('ngybImg').src = '../img/tiger.jpg'">改变Img的图片</button>
-        <!-- 改变css样式 -->
-        <button type="button" onclick="document.getElementById('ngybP').style.fontSize = '25px'">改变p标签的字体大小</button>
-        <!-- 隐藏和显示元素 -->
-        <button type="button" onclick="document.getElementById('ngybP').style.display = 'none'">隐藏</button>
-        <button type="button" onclick="document.getElementById('ngybP').style.display = 'block'">显示</button>
-        <!-- js存放到head中 -->
-        <button type="button" onclick="headJs()">将js存放到head中</button>
-        <!-- js存放到外部的js文件中 -->
-        <button type="button" onclick="outsideJs()">将js存放到外部的js文件中</button>
-        <!-- 输出 -->
-        <button type="button" onclick="outPutLog()">输出</button>
-        <!-- 语句 -->
-        <button type="button" onclick="statement()">语句</button>
-        <!-- 语法 -->
-        <button type="button" onclick="grammar()">语法</button>
-        <!-- 字符串语法 -->
-        <button type="button" onclick="strMethod()">字符串方法</button>
-        <!-- 数组语法 -->
-        <button type="button" onclick="arrayMethod()">数组方法</button>
-        <!-- 随机数 -->
-        <button type="button" onclick="getRandom()">随机数</button>
-        <!-- 数组中取值 -->
-        <button type="button" onclick="getValue()">数组中取值</button>
-        <!-- 日期 -->
-        <button type = 'button' onclick="getDate()">日期的一些方法</button>
-        <!-- Math方法 -->
-        <button type="button" onclick="mathMethod()">Math的一些方法</button>
-        <!-- forU循环的方法 -->
-        <button type="button" onclick="forMethod()">for循环的方法</button>
-        <!-- break的使用 -->
-        <button type="button" onclick="breakMethod()">break的使用</button>
-        <br/>
-        <p id="ngybP"></p>
-        <br/>
-        <p id="ngybPNew"></p>
-        <br/>
-        <img src="../img/wolf.jpg" id="ngybImg"/>
-        <!-- body中 -->
-        <!-- <script>
+
+<head>
+    <!-- head中 -->
+    <script>
+        function headJs() {
+            document.getElementById('ngybP').innerHTML = '我的第一个JavaScripts';
+        }
+    </script>
+    <script src="../js/js.js"></script>
+</head>
+
+<body>
+    <!-- 改变HTML内容 -->
+    <button type="button" onclick="document.getElementById('ngybP').innerHTML = Date()">点击这里来显示日期和时间</button>
+    <button type="button" onclick="document.getElementById('ngybP').innerHTML = '单引号'">单引号</button>
+    <button type="button" onclick='document.getElementById("ngybP").innerHTML = "双引号"'>双引号</button>
+    <!-- 改变HTML属性 -->
+    <button type="button" onclick="document.getElementById('ngybImg').src = '../img/tiger.jpg'">改变Img的图片</button>
+    <!-- 改变css样式 -->
+    <button type="button" onclick="document.getElementById('ngybP').style.fontSize = '25px'">改变p标签的字体大小</button>
+    <!-- 隐藏和显示元素 -->
+    <button type="button" onclick="document.getElementById('ngybP').style.display = 'none'">隐藏</button>
+    <button type="button" onclick="document.getElementById('ngybP').style.display = 'block'">显示</button>
+    <!-- js存放到head中 -->
+    <button type="button" onclick="headJs()">将js存放到head中</button>
+    <!-- js存放到外部的js文件中 -->
+    <button type="button" onclick="outsideJs()">将js存放到外部的js文件中</button>
+    <!-- 输出 -->
+    <button type="button" onclick="outPutLog()">输出</button>
+    <!-- 语句 -->
+    <button type="button" onclick="statement()">语句</button>
+    <!-- 语法 -->
+    <button type="button" onclick="grammar()">语法</button>
+    <!-- 字符串语法 -->
+    <button type="button" onclick="strMethod()">字符串方法</button>
+    <!-- 数组语法 -->
+    <button type="button" onclick="arrayMethod()">数组方法</button>
+    <!-- 随机数 -->
+    <button type="button" onclick="getRandom()">随机数</button>
+    <!-- 数组中取值 -->
+    <button type="button" onclick="getValue()">数组中取值</button>
+    <!-- 日期 -->
+    <button type='button' onclick="getDate()">日期的一些方法</button>
+    <!-- Math方法 -->
+    <button type="button" onclick="mathMethod()">Math的一些方法</button>
+    <!-- forU循环的方法 -->
+    <button type="button" onclick="forMethod()">for循环的方法</button>
+    <!-- break的使用 -->
+    <button type="button" onclick="breakMethod()">break的使用</button>
+    <!-- 二进制和十进制的相互转化 -->
+    <button type="button" onclick="twoAndTen()">二进制和十进制的相互转化</button>
+    <!-- 正则表达式 -->
+    <button type="button" onclick="reg()">正则表达式</button>
+    <!-- json -->
+    <button type="button" onclick="jsonTest()">json使用</button>
+    <!-- 箭头函数 -->
+    <button type="button" onclick="arrowFunction()">箭头函数</button>
+    <!-- 表单 -->
+    <button type="button" onclick="formFunction()">表单中的一些方法</button>
+    <!-- js对象 -->
+    <button type="button" onclick="JSObject()">JS对象</button>
+    <br />
+    <p id="ngybP"></p>
+    <br />
+    <p id="ngybPNew"></p>
+    <br />
+    <img src="../img/wolf.jpg" id="ngybImg" />
+    <!-- body中 -->
+    <!-- <script>
             document.getElementById('ngybP').innerHTML = '我的第一个JavaScript';
         </script> -->
-    </body>
+    <!-- 表单 -->
+    <form name="ngybForm" onsubmit="return submitFunction()" action="#" method="GET">
+        用户名:<input type="text" name="username" />
+        密码:<input type="number" id="pwd" max="16" min="6" required />
+        <input type="submit" value="提交" />
+    </form>
+</body>
+
 </html>

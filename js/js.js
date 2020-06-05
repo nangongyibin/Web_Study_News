@@ -6,27 +6,29 @@ function outPutLog() {
     // document.getElementById('ngybP').innerHTML = 5+6;
     // document.write(5+6);
     // window.alert(5+6);
-    console.log(5+6);
+    console.log(5 + 6);
 }
 
 function statement() {
-    var x,y,z; 
+    var x, y, z;
     x = 22;
-    y =11; 
-    z =x+y;
+    y = 11;
+    z = x + y;
     document.getElementById('ngybP').innerHTML = z;
 }
 
 function grammar() {
-    var x=7,y = 8,i = 10;
-    var z; 
-    z = x; 
-    z = (x+y)*i;
-    z =z+x;
+    var x = 7,
+        y = 8,
+        i = 10;
+    var z;
+    z = x;
+    z = (x + y) * i;
+    z = z + x;
     document.getElementById('ngybP').innerHTML = z;
 }
 
-function strMethod(){
+function strMethod() {
     var str = "The full name of China is the People's Republic of China.";
     var str1 = "Hello";
     var str2 = "World!";
@@ -66,9 +68,9 @@ function strMethod(){
 
 function arrayMethod() {
     var text;
-    var fruits = ['Banana','Orange','Apple','Mango'];
-    var Name = ['xiaohong','xiaoming','xiaobai'];
-    var number = [1,99,43,23,3,5];
+    var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+    var Name = ['xiaohong', 'xiaoming', 'xiaobai'];
+    var number = [1, 99, 43, 23, 3, 5];
     // text = "<ul>";
     //第一个参数为函数,第二个参数是数组值为空时的替代值
     // fruits.forEach(getArrayData);
@@ -135,29 +137,30 @@ function arrayMethod() {
     //     return value >99
     // })
     //符合要求的索引
-    text = number.findIndex(function (value,index,array) {
-        return value >3;
+    text = number.findIndex(function (value, index, array) {
+        return value > 3;
     })
     // document.getElementById('ngybP').innerHTML = fruits;
     document.getElementById('ngybPNew').innerHTML = text;
-    document.getElementById("ngybP").innerHTML= number;
-    function getArrayData(value,index,array){
-        text += "<li>"+value+"==="+index+"####"+array+"</li>";
+    document.getElementById("ngybP").innerHTML = number;
+
+    function getArrayData(value, index, array) {
+        text += "<li>" + value + "===" + index + "####" + array + "</li>";
     }
 
-    function isArray(x){
-        return x.constructor.toString().indexOf('Array')>-1;
+    function isArray(x) {
+        return x.constructor.toString().indexOf('Array') > -1;
     }
 }
 
 //随机数
-function getRandom(){
+function getRandom() {
     document.getElementById('ngybP').innerHTML = Math.random();
 }
 
-function getValue(){
-    var number = [1,99,43,23,3,5];
-    var text = Math.max.apply(null,number);
+function getValue() {
+    var number = [1, 99, 43, 23, 3, 5];
+    var text = Math.max.apply(null, number);
     document.getElementById('ngybP').innerHTML = text;
 }
 
@@ -173,7 +176,7 @@ function getDate() {
     // var date = new Date('February,19,2019');
     // var date  = new Date('Fri Mar 26 2018 09:56:24 GMT+0100 (Tokyo Time)');
     var date = new Date();
-    var text = date.getDate()+"@"+date.getDay()+"@"+date.getFullYear()+"@"+date.getHours()+"@"+date.getMilliseconds()+"@"+date.getMinutes()+"@"+date.getMonth()+"@"+date.getSeconds()+"@"+date.getTime();
+    var text = date.getDate() + "@" + date.getDay() + "@" + date.getFullYear() + "@" + date.getHours() + "@" + date.getMilliseconds() + "@" + date.getMinutes() + "@" + date.getMonth() + "@" + date.getSeconds() + "@" + date.getTime();
     //转化成utc字符串
     // var text = date.toUTCString();
     //一种日期显示标准
@@ -184,7 +187,7 @@ function getDate() {
 
 
 function mathMethod() {
-    var text; 
+    var text;
     //π
     // text = Math.PI;;
     //四舍五入
@@ -207,32 +210,129 @@ function mathMethod() {
 }
 
 function forMethod() {
-    var person ={
+    var person = {
         fname: 'Bill',
         lname: 'Gates',
         age: 62
     };
     var text = "";
-    var x; 
+    var x;
     //x为属性名
-    for(x in person){
+    for (x in person) {
         // text+=person[x];
-        text +=x;
+        text += x;
     }
     document.getElementById('ngybP').innerHTML = text;
 }
 
 function breakMethod() {
-    var cars  = ['BMW','Volvo','porsche','Ford'];
+    var cars = ['BMW', 'Volvo', 'porsche', 'Ford'];
     var text = '';
     list: {
-        text +=cars[0]+"<br>";
-        text +=cars[1]+"<br>";
+        text += cars[0] + "<br>";
+        text += cars[1] + "<br>";
         //跳出代码块
-        break list; 
-        text +=cars[2]+"<br>";
-        text +=cars[3]+"<br>";
+        break list;
+        text += cars[2] + "<br>";
+        text += cars[3] + "<br>";
     }
     document.getElementById('ngybP').innerHTML = text;
 }
 
+function twoAndTen() {
+    var text;
+    var number = -5;
+    // var number = 5; 
+    // text = number >>> 0 ; 
+    // text = number >>> 0;
+    text = (number >>> 0).toString(2);
+    // text =parseInt(text,2);
+    text = parseInt(text, 2).toString(10);
+    document.getElementById('ngybP').innerHTML = text;
+}
+
+function reg() {
+    var str = "The full name of China is the People's Republic of China."
+    //多个修饰符可以并列使用
+    var text = str.replace(/China/ig, 'china');
+    document.getElementById('ngybP').innerHTML = text;
+}
+
+function jsonTest() {
+    //json属性必须用双引号引起来
+    var text = '{"fname":"zhang", "lname":"san", "age":"11"}';
+    // var text = '{"name":"Bill Gates", "age":62, "city":"Seattle"}';
+    var str = JSON.parse(text);
+    str = JSON.stringify(text);
+    // document.getElementById('ngybP').innerHTML = text.age;
+    // document.getElementById('ngybPNew').innerHTML= str.age;
+    document.getElementById('ngybPNew').innerHTML = str;
+}
+
+function arrowFunction() {
+    // const str = (x, y) => x * y ;
+    const str = (x, y) => {
+        return x * y;
+    }
+    document.getElementById('ngybP').innerHTML = str(2, 3);
+}
+
+function submitFunction() {
+    var name = document.forms['ngybForm']['username'].value;
+    if (name == '') {
+        alert("请输入用户名");
+        return false;
+    }
+}
+
+function formFunction() {
+    var pwd = document.getElementById('pwd');
+    // if(pwd.checkValidity() ==false){
+    //     //validationMessage包含当validity为false时浏览器显示的消息
+    //     document.getElementById('ngybP').innerHTML = pwd.validationMessage;
+    // }
+    var txt;
+    if (pwd.validity.rangeUnderflow) {
+        txt = '值太小';
+    }
+    if (pwd.validity.rangeOverflow) {
+        txt = '值太大';
+    }
+    document.getElementById('ngybP').innerHTML = txt;
+}
+
+function JSObject() {
+    var object = {
+        fname: "zhang",
+        lname: "san",
+        age: 45,
+        get fn() {
+            return this.fname;
+        },
+        set fn(name) {
+            this.fname = name;
+        }
+    };
+    // //删除对象的属性
+    // // delete object.age;
+    // // object["age"] = 56;
+    // object.name = function () {
+    //     return this.fname + "==" + this.lname;
+    // }
+
+    // function object(fname, lname, age) {
+    //     this.fname = fname;
+    //     this.lname = lname;
+    //     this.age = age;
+    //     this.changeName = function (name) {
+    //         this.lname = name;
+    //     }
+    //     this.fullname = function () {
+    //         return this.fname + "==" + this.lname;
+    //     }
+    // }
+    // var person = new object('南宫', '问天', 29);
+    // person.changeName("燚滨");
+    // document.getElementById('ngybP').innerHTML = object.age;
+    //document.getElementById('ngybP').innerHTML = person.fullname();
+}
