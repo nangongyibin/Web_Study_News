@@ -400,3 +400,165 @@ function JSObject() {
     // person.changeName("燚滨");
     //document.getElementById('ngybP').innerHTML = person.fullname();
 }
+
+function functionTest() {
+    var text;
+    var person = {
+        fullName: function (city, county) {
+            return this.firstName + " " + this.lastName + "," + city + "," + county;
+        }
+    }
+    var person1 = {
+        firstName: "Bill",
+        lastName: "Gates"
+    }
+    //text = person.fullName.call(person1, "Seattle", "USA");
+    // text = person.fullName.apply(person1, ["Seattle", "USA"]);
+    //text = argumentNumber(1, 2, 3);
+    text = Math.max.apply("", [1, 2, 3]);
+    document.getElementById('ngybP').innerHTML = text;
+}
+
+function argumentNumber(a, b) {
+    return arguments.length;
+}
+
+function closePackage() {
+    document.getElementById('ngybP').innerHTML = add();
+}
+
+function docObjectModel() {
+    // var ele = document.querySelectorAll("p.doc");
+    // var text = ele[0].innerHTML;
+    var x = document.forms['ngybForm'];
+    var text = "";
+    var i;
+    for (i = 0; i < x.length; i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById('ngybP').innerHTML = text;
+}
+
+//闭包
+var add = (function () {
+    var sum = 0;
+    return function () {
+        sum += 1;
+        return sum;
+    }
+})();
+
+function animation() {
+    var element = document.getElementById('animate');
+    var pos = 0;
+    var i = setInterval(frame, 5);
+
+    function frame() {
+        if (pos == 350) {
+            clearInterval(i);
+        } else {
+            pos++;
+            element.style.top = pos + 'px';
+            element.style.left = pos + 'px';
+        }
+    }
+}
+
+
+function checkCookie() {
+    var text = "";
+    //返回指明浏览器中是否启用 cookie 的布尔值。
+    if (navigator.cookieEnabled) {
+        text = "Cookie已启用";
+    } else {
+        text = "Cookie未启用";
+    }
+    document.getElementById('ngybP').innerHTML = text;
+}
+
+function changeUser() {
+    var x = document.getElementById('user');
+    x.value = x.value.toUpperCase();
+}
+// 鼠标移动到控件上的操作
+function mouseOver(obj) {
+    obj.innerHTML = '请点击它';
+}
+
+function mouseOut(obj) {
+    obj.innerHTML = '请把鼠标移动上来';
+}
+
+function mouseDown(obj) {
+    obj.innerHTML = '请松开鼠标';
+}
+
+function mouseUp(obj) {
+    obj.innerHTML = '请点击它';
+}
+
+function mouseClick(obj) {
+    // obj.innerHTML = '点击事件处理';
+    var str = obj.textContent || obj.innerText;
+    console.log(str);
+    obj.textContent = "点击事件处理";
+    console.log('点击事件处理');
+}
+
+//不支持跨域
+function ajax() {
+    var xhttp;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    } else {
+        //code对于IE6,IE5
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = function () {
+        console.log(this.readyState + "===" + this.status + "====" + this.statusText + this.getAllResponseHeaders());
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('ngybP').innerHTML = this.responseText;
+        }
+    }
+    xhttp.open('GET', 'http://it.nangongyibin.com:8080/resource/mobicop.json', true);
+    xhttp.send();
+}
+
+function jqueryTest() {
+    $(document).ready(function () {
+        console.log('haha');
+        // id
+        // var ele = $("#ngybP");
+        // $("#ngybPNew").text(ele[0].innerHTML);
+        //标签
+        // var ele = $("p");
+        // $("#ngybPNew").text(ele[0].innerHTML);
+        //class
+        // var ele = $(".doc");
+        // $("#ngybP").text(ele[0].innerHTML);
+        // css选择器
+        // var ele = $("p.doc");
+        // $("#ngybP").text(ele[0].innerHTML);
+        //querySelectAll
+        // var ele = document.querySelectorAll("p.doc");
+        // $("#ngybP").text(ele[0].innerHTML);
+        //加载html
+        // var ele = $("#ngybP");
+        // ele.html("<h1>天道酬情追梦无疆</h1>");
+        // var str = ele.html();
+        // console.log(str);
+        //隐藏
+        // var ele = $("#ngybP");
+        // ele.hide();
+        //显示
+        // ele.show();
+        //样式css
+        // var ele = $("#ngybP");
+        // ele.css("color", "red");
+        //删除元素
+        // $("#ngybP").remove();
+        //获取父元素
+        var ele = $("#ngybP").parent();
+        console.log(ele.html())
+    });
+}

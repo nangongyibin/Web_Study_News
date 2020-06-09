@@ -8,10 +8,14 @@
             document.getElementById('ngybP').innerHTML = '我的第一个JavaScripts';
         }
     </script>
+    <!-- jquery的引用 -->
+    <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/js.js"></script>
+    <link rel="stylesheet" href="../css/js.css" />
 </head>
+<!-- onload用户处理cookie  -->
 
-<body>
+<body onload="checkCookie()">
     <!-- 改变HTML内容 -->
     <button type="button" onclick="document.getElementById('ngybP').innerHTML = Date()">点击这里来显示日期和时间</button>
     <button type="button" onclick="document.getElementById('ngybP').innerHTML = '单引号'">单引号</button>
@@ -61,10 +65,18 @@
     <button type="button" onclick="formFunction()">表单中的一些方法</button>
     <!-- js对象 -->
     <button type="button" onclick="JSObject()">JS对象</button>
+    <!-- 函数 -->
+    <button type="button" onclick="functionTest()">函数</button>
+    <!-- 闭包 -->
+    <button type="button" onclick="closePackage()">闭包</button>
+    <!-- 文档对象模型 -->
+    <button type="button" onclick="docObjectModel()">文档对象模型</button>
+    <!-- 动画 -->
+    <button type="button" onclick="animation()">动画</button>
     <br />
     <p id="ngybP"></p>
     <br />
-    <p id="ngybPNew"></p>
+    <p id="ngybPNew" class="doc">uuuuu</p>
     <br />
     <img src="../img/wolf.jpg" id="ngybImg" />
     <!-- body中 -->
@@ -73,10 +85,23 @@
         </script> -->
     <!-- 表单 -->
     <form name="ngybForm" onsubmit="return submitFunction()" action="#" method="GET">
-        用户名:<input type="text" name="username" />
+        用户名:<input type="text" name="username" onchange="changeUser()" id="user" />
         密码:<input type="number" id="pwd" max="16" min="6" required />
         <input type="submit" value="提交" />
     </form>
+    <!-- 换行 -->
+    <br />
+    <hr />
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+    <hr />
+    <div id="mouse" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onmousedown="mouseDown(this)"
+        onmouseup="mouseUp(this)" onclick="mouseClick(this)">请把鼠标移动上来</div>
+    <!-- ajax的简单使用 -->
+    <button type="button" onclick="ajax()">ajax的简单实用</button>
+    <!-- jquery的简单使用 -->
+    <button type="button" onclick="jqueryTest()">jquery的简单使用</button>
 </body>
 
 </html>
