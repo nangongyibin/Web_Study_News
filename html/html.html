@@ -2,13 +2,13 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <base target="_blank">
 </head>
 
 <!-- bgcolor背景色 -->
 
-<body bgcolor="white">
+<body bgcolor="white" background="../img/eg_background.jpg">
     <!-- align对齐方式 -->
     <h1 id="head" align="center">标题标签,数越大,字越小</h1>
     <p>段落标签</p>
@@ -36,7 +36,15 @@
     <ins>下划线ins</ins>
     <!-- 图像标签 src图像的路径 border设置图像边框的宽度-->
     <br />
-    <img src="../img/x.jpg" alt="图像不能显示时的替换文本" title="鼠标悬停时显示的内容" width="300" height="1200" border="2" />
+    <img src="../img/x.jpg" id="picture" alt="图像不能显示时的替换文本" title="鼠标悬停时显示的内容" width="30px" height="12px" border="2"
+        usemap="#plane" />
+    <!-- 定义图像地图 -->
+    <map name="plane" id="planet">
+        <area shape="circle" coords="180,139,14" href="../img/wolf.jpg" target="_blank" alt="Venus" />
+        <area shape="circle" coords="129,161,10" href="../img/tiger.jpg" target="_blank" alt="Venus" />
+        <!-- 定义图像地图中的可点击区域 -->
+        <area shape="rect" coords="0,0,110,260" href="../img/eg_background.jpg" target="_blank" alt="Venus" />
+    </map>
     <br />
     <!-- 链接标签 -->
     <!--  target="_self" -->
@@ -46,7 +54,8 @@
     <!-- 锚点定位 -->
     <a href="#head">返回当前h1标题标签</a>
     <!-- 无序列表 -->
-    <ul>
+    <!-- type序号类型 -->
+    <ul type="circle">
         <li>无序列表1</li>
         <li>无序列表2</li>
         <li>无序列表3</li>
@@ -67,12 +76,25 @@
         <dd>自定义列表dd</dd>
     </dl>
     <!-- 表格 border表格边框-->
-    <table border="1" width="60" height="60" cellspacing="0" cellpadding="0" align="center">
+    <table border="1" width="180" height="180" cellspacing="0" cellpadding="0" align="center">
         <caption>表标题</caption>
+        <colgroup style="color: red;" width="500px"></colgroup>
+        <colgroup style="color: blue;" width="1000px"></colgroup>
+        <!-- 现实中不用 -->
+        <!-- <col align="left" style="color: red;" />
+        <col align="right" style="color: blue;" /> -->
         <thead>
-            <th>表头1</th>
-            <th>表头2</th>
+            <tr>
+                <th>表头1</th>
+                <th>表头2</th>
+            </tr>
         </thead>
+        <tfoot>
+            <tr>
+                <td>table-tr-td</td>
+                <td>table-tr-td</td>
+            </tr>
+        </tfoot>
         <tbody>
             <tr>
                 <td>table-tr-td</td>
@@ -88,8 +110,19 @@
     </table>
     <!-- 表单 -->
     <form action="test" method="GET" name="form1">
-        <input type="text" name="test0" value="test1" size="10" maxlength="5" id="test2" />
-        <input type="checkbox" checked="checked" />
+        <fieldset>
+            <legend>表单标题</legend>
+            <input type="text" name="test0" value="test1" size="10" maxlength="5" id="test2" />
+            <input type="checkbox" checked="checked" />
+            <button type="button">按钮</button>
+            <!-- datalist的使用 -->
+            <input list="brower" />
+            <datalist id="brower">
+                <option value="谷歌" />
+                <option value="火狐" />
+                <option value="QQ浏览器" />
+            </datalist>
+        </fieldset>
     </form>
     <!-- label标签 -->
     <label for="male">Male</label>
@@ -147,7 +180,47 @@
     <sup>上标字</sup>
     <!-- 下标字 -->
     <sub>下标字</sub>
+    <!-- iframe -->
+    <iframe src="../img/x.jpg" width="60px" height="60px" frameborder="0" name="iframe_a"></iframe>
+    <a href="http://www.w3school.com.cn" target="iframe_a">iframe</a>
+    <!-- html5新增 -->
+    <!-- <video width="420px" controls>
+        <source src="../video/naxienian.mp4" type="video/mp4" />
+    </video> -->
+    <canvas id="mycanvas" width="200px" height="100px" style="border: 1px solid #c3c3c3;">Your brower does not support
+        the canvas element.</canvas>
 
+    <script>
+        var c = document.getElementById('mycanvas');
+        var cxt = c.getContext("2d");
+        // 画矩形
+        // cxt.fillStyle = "#FF0000";
+        // cxt.fillRect(0, 0, 150, 150);
+        // 画线条
+        // cxt.moveTo(10, 10);
+        // cxt.lineTo(150, 50);
+        // cxt.lineTo(10, 50);
+        // cxt.stroke();
+        // // 画圆
+        // cxt.fillStyle = "#FF0000";
+        // cxt.beginPath();
+        // cxt.arc(70, 18, 15, 0, Math.PI * 2, true);
+        // cxt.closePath();
+        // cxt.fill();
+        //渐变
+        // var grd = cxt.createLinearGradient(0, 0, 175, 50);
+        // grd.addColorStop(0, "#FF0000");
+        // grd.addColorStop(1, "#00FF00");
+        // cxt.fillStyle = grd;
+        // cxt.fillRect(0, 0, 175, 50);
+        //图像
+        var img = new Image();
+        img.src = "eg_flower.png";
+        cxt.drawImage(img, 0, 0);
+    </script>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+        <polygon points="100,10,40,180,190,60,10,60,160,180"
+            style="fill:red;stroke:blue;stroke-width:3;fill-rule:evenodd" /> </svg>
 </body>
 
 </html>

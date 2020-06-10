@@ -562,3 +562,26 @@ function jqueryTest() {
         console.log(ele.html())
     });
 }
+var w;
+
+function startWorker() {
+    // 检测Web Worker支持
+    if (typeof (Worker) != "undefined") {
+        if (typeof (w) == "undefined") {
+            w = new Worker("../js/worker.js");
+        }
+        console.log("1111");
+        // 事件监听
+        w.onmessage = function (event) {
+            document.getElementById("ngybP").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("ngybP").innerHTML = "Sorry,your browser does not support Web Workers...";
+    }
+}
+
+function endWorker() {
+    //终止web Worker
+    w.terminate();
+    w = undefined;
+}
