@@ -1,0 +1,96 @@
+/* 属性选择器 */
+[title]
+{
+    color: red;
+}
+p {
+    /*背景色 */
+    background-color: skyblue;
+    /* 背景图像 */
+    background-image: url(../img/tiger.jpg);
+    /* 背景重复 */
+    background-repeat: repeat-x;
+    /* 背景定位 */
+    background-position: center;
+    /* 背景关联 防止背景图像滚动*/
+    background-attachment: fixed;
+}
+.cssText{
+    /* 缩进文本 */
+    /* text-indent: 4em; */
+    /* 水平对齐 */
+    /* text-align: center; */
+    /* 字间隔 单词*/
+    /* word-spacing: 30px; */
+    /* 字母间隔 */
+    /* letter-spacing: 4em; */
+    /* 字符转换 */
+    text-transform: uppercase;
+    /* 文本装饰 */
+    text-decoration: underline;
+    /* 处理空白字符 */
+    white-space: nowrap;
+    /* 文本方向 */
+    direction: rtl;
+}
+/* CSS字体 */
+.cssFont {
+    /* 指定字体系列 */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* 字体风格 */
+    font-style: oblique;
+    /* 字体变形 */
+    font-variant: small-caps;
+    /* 字体加粗 */
+    font-weight: 400;
+    font-size: 25px;
+}
+/* CSS链接 */
+a:link{
+    color: #FF0000;/*未被访问的链接*/
+    text-decoration: none;
+    background-color: blueviolet;
+}
+a:visited{
+    color: #00FF00;/*已经被访问的链接*/
+    text-decoration: none;
+}
+a:hover{
+    color: #FF00FF;/*鼠标指针移动到链接上*/
+}
+a:active{
+    color: #0000FF; /*正在被点击的链接*/
+}
+/* CSS列表 */
+ul {
+    /* 列表类型 */
+    list-style-type: square; /*方块*/
+     /* 列表项图像 */
+     list-style-image: url(../img/eg_background.jpg);
+     /* 列表标志位置 */
+     list-style-position: inside;
+}
+/*CSS表格 */
+table {
+    /* 折叠边框 */
+    border-collapse: collapse;
+    width: 100%;
+}
+table,th,td{
+    /* 表格边框 */
+    border: 1px solid blue;
+}
+th{
+    height: 50px;
+    /* 表格颜色 */
+    background-color: green;
+    color: white;
+}
+td{
+    height: 50px;
+    /* 表格文本对齐 */
+    text-align: right;
+    vertical-align: bottom;
+    /* 表格内边距 */
+    padding: 15px;
+}
