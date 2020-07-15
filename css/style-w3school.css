@@ -73,12 +73,18 @@ ul {
 /*CSS表格 */
 table {
     /* 折叠边框 */
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     width: 100%;
+    /* 设置是否显示表格中的空单元格 */
+    empty-cells: hide;
+    /*设置显示单元、行、列的 */
+    table-layout: auto;
 }
 table,th,td{
     /* 表格边框 */
     border: 1px solid blue;
+    /* 设置分割单元格边框的距离 */
+    border-spacing: 0px;
 }
 th{
     height: 50px;
@@ -93,4 +99,17 @@ td{
     vertical-align: bottom;
     /* 表格内边距 */
     padding: 15px;
+}
+caption{
+    /* 设置表格标题的位置 */
+    caption-side: bottom;
+}
+/* CSS轮廓 */
+span{
+    /* 设置轮廓的颜色 */
+    outline-color: #FF0000;
+    /* 设置轮廓的样式 */
+    outline-style: dotted;
+    /* 设置轮廓的宽度 */
+    outline-width: thick;
 }
