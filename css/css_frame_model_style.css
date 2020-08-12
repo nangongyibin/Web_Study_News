@@ -1,0 +1,15 @@
+p {
+    /* css内边距 */
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    /* border-style: solid; */
+    /* 定义单边样式 */
+    border-top-style: dotted;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
+    /* 边框的宽度 */
+    border-width: 5px;
+}
